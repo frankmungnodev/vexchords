@@ -189,7 +189,7 @@ class ChordBox {
         .move(x, y - this.fretSpacing / 2)
         .radius(this.params.circleRadius || this.metrics.circleRadius)
         .stroke({ color: this.params.strokeColor, width: this.params.strokeWidth })
-        .fill(fretNum > 0 ? this.params.strokeColor : this.params.bgColor);
+        .fill(this.params.strokeColor);
     } else {
       this.drawText(x, y - this.fretSpacing, 'X');
     }
@@ -203,9 +203,9 @@ class ChordBox {
       })
         .stroke({
           width: 0.7,
-          color: fretNum !== 0 ? this.params.labelColor : this.params.strokeColor,
+          color: this.params.labelColor,
         })
-        .fill(fretNum !== 0 ? this.params.labelColor : this.params.strokeColor);
+        .fill(this.params.labelColor);
     }
 
     return this;
